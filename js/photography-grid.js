@@ -5,20 +5,20 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// All photo collections
+// All photo collections - FIXED PATHS FOR GITHUB PAGES
 const photoCollections = {
   fairbanks: { 
-    path: "/assets/photography/fairbanks", 
+    path: "/portfolio/assets/photography/fairbanks", 
     count: 14,
     prefix: "fb"
   },
   hongkong: { 
-    path: "/assets/photography/hongkong", 
+    path: "/portfolio/assets/photography/hongkong", 
     count: 18,
     prefix: "hk"
   },
   jaipur: { 
-    path: "/assets/photography/jaipur", 
+    path: "/portfolio/assets/photography/jaipur", 
     count: 16,
     prefix: "j"
   },
@@ -120,9 +120,9 @@ function createPhotoGrid() {
       if (pattern.includes(colIndex) && imageIndex < allImages.length) {
         const imageData = allImages[imageIndex];
         
-        // Create link wrapper
+        // Create link wrapper - FIXED PATH
         const link = document.createElement("a");
-        link.href = `./photopages/${imageData.collection}.html`;
+        link.href = `/portfolio/pages/photopages/${imageData.collection}.html`;
         link.className = "photo-link";
         
         const imgWrapper = document.createElement("div");
@@ -309,7 +309,7 @@ function updateDateTime() {
   const siteName = document.querySelector('.site-name p:first-child');
   if (siteName) {
     siteName.addEventListener('click', () => {
-      window.location.href = './index.html';
+      window.location.href = '/portfolio/';
     });
   }
   
