@@ -2,17 +2,17 @@
 
 const photoCollections = {
     fairbanks: { 
-      path: "../../assets/photography/fairbanks", 
+      path: "./assets/photography/fairbanks", 
       count: 14,
       prefix: "fb"
     },
     hongkong: { 
-      path: "../../assets/photography/hongkong", 
+      path: "./assets/photography/hongkong", 
       count: 18,
       prefix: "hk"
     },
     jaipur: { 
-      path: "../../assets/photography/jaipur", 
+      path: "./assets/photography/jaipur", 
       count: 16,
       prefix: "j"
     },

@@ -27,7 +27,7 @@ function updateDateTime() {
   const siteName = document.querySelector('.site-name p:first-child');
   if (siteName) {
     siteName.addEventListener('click', () => {
-      window.location.href = '../index.html';
+      window.location.href = './index.html';
     });
   }
   
