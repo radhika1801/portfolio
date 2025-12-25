@@ -1,0 +1,93 @@
+<!-- photography.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photography | Radhika Malpani</title>
+    <link rel="icon" href="../site-icon.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script type="module" crossorigin src="/portfolio/assets/photography-GJpyqEkk.js"></script>
+    <link rel="modulepreload" crossorigin href="/portfolio/assets/globals-CG6FfZ8I.js">
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/globals-DjC8Zkw8.css">
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/photography-grid-CJD0F6HI.css">
+  </head>
+  <body>
+    
+    <div class="app">
+      <!-- Left Navigation -->
+      <nav class="dark">
+        <div class="nav-item">
+          <div class="link">
+            <a href="/portfolio/pages/digital.html"><span>01</span>DIGITAL</a>
+          </div>
+        </div>
+        <div class="nav-item active">
+          <div class="link">
+            <a href="/portfolio/pages/photography.html"><span>02</span>PHOTOGRAPHY</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="link">
+            <a href="/portfolio/pages/graphics.html"><span>03</span>GRAPHICS</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="link">
+            <a href="/portfolio/pages/about.html"><span>04</span>ABOUT ME</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right Header Info -->
+      <div class="site-header">
+        <div class="site-intro dark">
+          <div class="site-name">
+            <p onclick="window.location.href='/portfolio/'" style="cursor: pointer;">RADHIKA MALPANI</p>
+            <p class="secondary">CREATIVE TECHNOLOGIST</p>
+          </div>
+          <div class="site-info">
+            <p id="current-time">5:22 PM [TOKYO]</p>
+            <p id="current-date">DECEMBER 24, 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photography Grid - All images mixed randomly -->
+      <div class="photography-container"></div>
+    </div>
+
+    <script>
+      // Update time and date
+      function updateDateTime() {
+        const now = new Date();
+        
+        const timeOptions = { 
+          hour: 'numeric', 
+          minute: '2-digit', 
+          hour12: true,
+          timeZone: 'Asia/Tokyo'
+        };
+        const timeStr = now.toLocaleTimeString('en-US', timeOptions).toUpperCase();
+        
+        const dateOptions = { 
+          month: 'long', 
+          day: 'numeric', 
+          year: 'numeric',
+          timeZone: 'Asia/Tokyo'
+        };
+        const dateStr = now.toLocaleDateString('en-US', dateOptions).toUpperCase();
+        
+        document.getElementById('current-time').textContent = `${timeStr} [TOKYO]`;
+        document.getElementById('current-date').textContent = dateStr;
+      }
+      
+      updateDateTime();
+      setInterval(updateDateTime, 60000);
+    </script>
+  </body>
+</html>
