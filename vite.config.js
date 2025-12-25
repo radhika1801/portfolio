@@ -1,8 +1,9 @@
 // vite.config.js
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/portfolio/', // Add this for GitHub Pages - change 'portfolio' to your repo name
+  base: '/portfolio/',
   root: './',
   publicDir: 'public',
   server: {
@@ -11,6 +12,15 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    assetsDir: 'assets'
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        digital: resolve(__dirname, 'pages/digital.html'),
+        photography: resolve(__dirname, 'pages/photography.html'),
+        graphics: resolve(__dirname, 'pages/graphics.html'),
+        about: resolve(__dirname, 'pages/about.html'),
+      }
+    }
   }
 });
