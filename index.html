@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radhika Malpani Portfolio</title>
+    <link rel="icon" href="./site-icon.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-CyWtknue.css">
+  </head>
+  <body>
+    <!-- Scroll blocker overlay -->
+    <div class="scroll-blocker"></div>
+    
+    <div class="app">
+      <!-- Left Navigation -->
+      <nav class="dark">
+        <div class="nav-item">
+          <div class="link">
+            <a href="./pages/digital.html"><span>01</span>DIGITAL</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="link">
+            <a href="./pages/photography.html"><span>02</span>PHOTOGRAPHY</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="link">
+            <a href="./pages/graphics.html"><span>03</span>GRAPHICS</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="link">
+            <a href="./pages/about.html"><span>04</span>ABOUT ME</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right Header Info -->
+      <div class="site-header">
+        <div class="site-intro dark">
+          <div class="site-name">
+            <p>RADHIKA MALPANI</p>
+            <p class="secondary">CREATIVE TECHNOLOGIST</p>
+          </div>
+          <div class="site-info">
+            <p id="current-time">4:05 PM [TOKYO]</p>
+            <p id="current-date">DECEMBER 23, 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Section - 3D Model (BEHIND everything) -->
+      <section class="hero">
+        <div id="canvas3d">
+          <iframe
+            id="spline-iframe"
+            src="https://my.spline.design/glassdonut-40daa62dc6036e1e0f5af828a79805e6/"
+            frameborder="0"
+            width="100%"
+            height="100%"
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- Pixel Pet -->
+      <canvas id="pixel-pet"></canvas>
+    </div>
+
+    <script>
+        // Update time and date
+        function updateDateTime() {
+          const now = new Date();
+          
+          const timeOptions = { 
+            hour: 'numeric', 
+            minute: '2-digit', 
+            hour12: true,
+            timeZone: 'Asia/Tokyo'
+          };
+          const timeStr = now.toLocaleTimeString('en-US', timeOptions).toUpperCase();
+          
+          const dateOptions = { 
+            month: 'long', 
+            day: 'numeric', 
+            year: 'numeric',
+            timeZone: 'Asia/Tokyo'
+          };
+          const dateStr = now.toLocaleDateString('en-US', dateOptions).toUpperCase();
+          
+          document.getElementById('current-time').textContent = `${timeStr} [TOKYO]`;
+          document.getElementById('current-date').textContent = dateStr;
+        }
+        
+        updateDateTime();
+        setInterval(updateDateTime, 60000);
+      </script>
+
+    <script src="../js/home.js"></script>
+  </body>
+</html>
