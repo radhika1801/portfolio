@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fairbanks — Radhika Malpani</title>
+    <link rel="icon" href="../../site-icon.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/globals.css" />
+    <link rel="stylesheet" href="../../css/photography-grid.css" />
+    <link rel="stylesheet" href="../../css/collection-page.css" />
+  </head>
+  <body>
+    
+    <!-- Left Navigation -->
+    <nav>
+      <div class="nav-item">
+        <div class="link">
+          <a href="../digital.html"><span>01</span>DIGITAL</a>
+        </div>
+      </div>
+      <div class="nav-item active">
+        <div class="link">
+          <a href="../photography.html"><span>02</span>PHOTOGRAPHY</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="link">
+          <a href="../graphics.html"><span>03</span>GRAPHICS</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="link">
+          <a href="../about.html"><span>04</span>ABOUT ME</a>
+        </div>
+      </div>
+
+      <div class="location-info">
+        <h3>Jaipur, India</h3>
+        <p class="coords">26.9124° N<br>75.7873° E</p>
+        <p class="about">The Pink City, where ancient palaces meet bustling streets and vibrant colors tell stories of royal heritage.</p>
+    </div>
+    </nav>
+
+    <!-- Right Header Info -->
+    <div class="site-header">
+      <div class="site-intro">
+        <div class="site-name">
+          <p onclick="window.location.href='../../index.html'" style="cursor: pointer;">RADHIKA MALPANI</p>
+          <p class="secondary">CREATIVE TECHNOLOGIST</p>
+        </div>
+        <div class="site-info">
+          <p id="current-time">5:22 PM [TOKYO]</p>
+          <p id="current-date">DECEMBER 24, 2025</p>
+        </div>
+      </div>
+    </div>
+
+    <main class="gallery" data-collection="Jaipur">
+      <div class="hero">
+        <img id="hero-img" src="../../assets/photography/jaipur/j1.jpg" alt="Jaipur">
+      </div>
+      <div id="thumbs" class="thumbs-grid"></div>
+    </main>
+
+    <div id="lightbox" class="lightbox">
+      <button class="arrow left">‹</button>
+      <img id="lightbox-img" alt="Full size">
+      <button class="arrow right">›</button>
+    </div>
+
+    <script type="module" src="../../js/collection-page.js"></script>
+    <script>
+      // Update time and date
+      function updateDateTime() {
+        const now = new Date();
+        
+        const timeOptions = { 
+          hour: 'numeric', 
+          minute: '2-digit', 
+          hour12: true,
+          timeZone: 'Asia/Tokyo'
+        };
+        const timeStr = now.toLocaleTimeString('en-US', timeOptions).toUpperCase();
+        
+        const dateOptions = { 
+          month: 'long', 
+          day: 'numeric', 
+          year: 'numeric',
+          timeZone: 'Asia/Tokyo'
+        };
+        const dateStr = now.toLocaleDateString('en-US', dateOptions).toUpperCase();
+        
+        document.getElementById('current-time').textContent = `${timeStr} [TOKYO]`;
+        document.getElementById('current-date').textContent = dateStr;
+      }
+      
+      updateDateTime();
+      setInterval(updateDateTime, 60000);
+    </script>
+  </body>
+</html>

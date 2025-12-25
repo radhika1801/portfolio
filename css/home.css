@@ -1,0 +1,244 @@
+/* Scroll blocking - ONLY for home page */
+html {
+  overflow: hidden !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+body {
+  overflow: hidden !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  font-family: "Akkurat Mono", sans-serif;
+  background-color: #e8e8e8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.scroll-blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.app {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+
+/* Navigation - Top Left */
+nav {
+  position: fixed !important;
+  top: 2em !important;
+  left: 2em !important;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+.nav-item {
+  position: relative;
+  padding: 0;
+}
+
+.nav-item .link {
+  position: relative;
+  z-index: 100;
+}
+
+nav .link a {
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  display: block;
+  font-weight: 400;
+  color: #0a0a0a;
+  font-family: "Akkurat Mono", sans-serif;
+  pointer-events: auto;
+}
+
+nav .link a:hover {
+  opacity: 0.5;
+}
+
+nav .link a span {
+  font-size: 0.55rem;
+  vertical-align: super;
+  margin-right: 0.3em;
+  position: relative;
+  top: -0.3em;
+  font-family: "Akkurat Mono", sans-serif;
+}
+
+/* Site Header - Top Right */
+.site-header {
+  position: fixed !important;
+  top: 2em !important;
+  right: 2em !important;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+.site-intro {
+  display: flex;
+  flex-direction: row;
+  gap: 4em;
+  align-items: flex-start;
+}
+
+.site-intro p {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0a0a0a;
+  font-family: "Akkurat Mono", sans-serif;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.site-intro p:hover {
+  opacity: 0.5;
+}
+
+.site-intro p.secondary {
+  color: #666666;
+  cursor: default;
+}
+
+.site-intro p.secondary:hover {
+  opacity: 1;
+}
+
+.site-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  text-align: left;
+}
+
+.site-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  text-align: right;
+}
+
+/* Hero Section - COMPLETELY FIXED */
+.hero {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+  z-index: 0;
+}
+
+#canvas3d {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 0 !important;
+}
+
+#canvas3d iframe {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+  pointer-events: none;
+}
+
+/* Hide "Built with Spline" button */
+#canvas3d::after {
+  content: '';
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  width: 200px;
+  height: 80px;
+  background: #e8e8e8;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#canvas3d iframe {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+  pointer-events: auto !important; /* Enable interaction */
+}
+
+/* Pixel Pet Canvas */
+#pixel-pet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 999;
+  pointer-events: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  nav {
+    top: 1.5em !important;
+    left: 1.5em !important;
+    gap: 0.75em;
+  }
+
+  .site-header {
+    top: 1.5em !important;
+    right: 1.5em !important;
+  }
+
+  .site-intro {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+  
+  .site-info {
+    text-align: left;
+  }
+
+  nav .link a {
+    font-size: 0.8rem;
+  }
+
+  .site-intro p {
+    font-size: 0.7rem;
+  }
+}

@@ -1,0 +1,227 @@
+/* about.css - Matching website style */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #e8e8e8 !important;
+    color: #0a0a0a;
+    font-family: "Akkurat Mono", sans-serif;
+  }
+  
+  /* Override nav colors for light background */
+  nav .link a {
+    color: #0a0a0a !important;
+  }
+  
+  nav .link a span {
+    color: #666666 !important;
+  }
+  
+  .site-intro p {
+    color: #0a0a0a !important;
+  }
+  
+  .site-intro p.secondary {
+    color: #666666 !important;
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8e8e8;
+    padding: 8rem 4rem 4rem 4rem;
+  }
+  
+  .about-content {
+    display: flex;
+    gap: 4rem;
+    max-width: 1000px;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .hover-img {
+    position: relative;
+    flex-shrink: 0;
+    width: 300px;
+    height: 400px; /* Maintains 3:4 aspect ratio */
+    overflow: hidden;
+  }
+  
+  .hover-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* Bio Text */
+  .bio-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .bio-text h1 {
+    font-family: "Akkurat Mono", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #0a0a0a;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  
+  .bio-text p {
+    font-family: "Akkurat Mono", sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #0a0a0a;
+    font-weight: 300;
+  }
+  
+  .bio-text .location {
+    color: #666;
+    font-style: italic;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Grid Overlay Effect */
+  .grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  .grid-block {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #847fd0;
+    color: #0a0a0a;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .grid-block.active {
+    opacity: 1;
+  }
+
+  /* Pixel Pet Canvas */
+#pixel-pet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: 999;
+    pointer-events: none;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .hero {
+      padding: 7rem 3rem 4rem 3rem;
+    }
+  
+    .about-content {
+      gap: 3rem;
+      max-width: 900px;
+    }
+  
+    .hover-img {
+      width: 280px;
+      height: 373px;
+    }
+  
+    .bio-text h1 {
+      font-size: 1.6rem;
+    }
+  
+    .bio-text p {
+      font-size: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .hero {
+      padding: 6rem 2rem 4rem 2rem;
+    }
+  
+    .about-content {
+      flex-direction: column;
+      gap: 2.5rem;
+      align-items: center;
+      max-width: 600px;
+    }
+  
+    .hover-img {
+      width: 260px;
+      height: 347px;
+    }
+  
+    .bio-text {
+      max-width: 500px;
+    }
+  
+    .bio-text h1 {
+      font-size: 1.5rem;
+    }
+  
+    .bio-text p {
+      font-size: 0.75rem;
+    }
+  
+    .grid-block {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .hero {
+      padding: 6rem 1.5rem 3rem 1.5rem;
+    }
+  
+    .about-content {
+      gap: 2rem;
+    }
+  
+    .hover-img {
+      width: 240px;
+      height: 320px;
+    }
+  
+    .bio-text h1 {
+      font-size: 1.3rem;
+    }
+  
+    .bio-text p {
+      font-size: 0.7rem;
+      line-height: 1.6;
+    }
+  
+    .grid-block {
+      font-size: 12px;
+    }
+  }
